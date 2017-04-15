@@ -11,6 +11,5 @@ wget admitrieva.com/dhclient.conf -O ~/testtask/dhclient.conf | echo 'download c
 for i in `ls -1 ~/testtask/ | grep -v dhclient`; do cat ~/testtask/dhclient.conf > ~/testtask/$i; done  | echo 'copy config file to testfile[1:10]in directory testtask' >> ~/testlog
 echo 'list files:' >> ~/testlog
 ls -1 ~/testtask/*  >> ~/testlog | ls ~/testlog >> ~/testlog
-echo 'move fucking file from / to some depth filesystem' >> ~/testlog
-
+#for i in `ls -1 ~/testtask/ | grep -v dhclient`; do mv -v $i /* >> ~/testlog ; done | echo 'end move fucking file from / to some depth filesystem' >> ~/testlog
 
