@@ -18,3 +18,5 @@ cd ~/anna/
 for f in `ls -1 ~/anna/testtask/ | grep -v testfile10` ; do mkdir dir_$f 
 mv ~/anna/testtask/$f dir_$f/ ; done | echo 'move files in different dir' >> ~/anna/testlog
 mv ~/anna/testtask/testfile10 ~/anna/ | echo 'move one file in root_anna dir' >> ~/anna/testlog
+echo 'find all files with name testfile*' >> ~/anna/testlog
+find ~/anna -type f -name testfile* >> ~/anna/testlog
