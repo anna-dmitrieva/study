@@ -1,18 +1,16 @@
 #!/bin/bash
 #
 # 
-rm -rf ~/testtask/ | > ~/testlog
-touch ~/testlog | echo 'create log file' >> ~/testlog
-chmod 444 ~/testlog | echo 'modificate logfile for read any user' >> ~/testlog
-mkdir ~/testtask/ | echo 'create dir testtask' >> ~/testlog
-touch ~/testtask/testfile{1..10} | echo 'create files testfile[1:10]in directory testtask' >> ~/testlog
-echo '--- start download config file' >> ~/testlog | touch ~/wgetlog
-wget -b admitrieva.com/dhclient.conf -O ~/testtask/dhclient.conf -a ~/testlog
-echo '--- end download config from internet' >> ~/testlog
-for i in `ls -1 ~/testtask/ | grep -v dhclient`; do cat ~/testtask/dhclient.conf > ~/testtask/$i; done 
-echo 'copy config file to testfile[1:10]in directory testtask' >> ~/testlog
-echo 'list files:' >> ~/testlog
-ls -1h ~/testtask/*  >> ~/testlog | ls ~/testlog >> ~/testlog
-echo '--- start move files from testtask to /*'
-for i in `ls -1 ~/testtask/ | grep -v dhclient`; do for x in `find / -maxdepth 1 -type d|grep -v proc | grep -v sys`; do cp -v ~/testtask/$i $x/$I >> ~/testlog ; done ; done; rm ~/testtask/t*; 
-echo '--- end move fucking file from / to some depth filesystem' >> ~/testlog
+mkdir ~/anna
+touch ~/anna/testlog | echo 'create log file' >> ~/anna/testlog
+chmod 444 ~/anna/testlog | echo 'modificate logfile for read any user' >> ~/anna/testlog
+mkdir ~/anna/testtask/ | echo 'create dir testtask' >> ~/anna/testlog
+for i in 1 2 3 4 5 6 7 8 9 10 ; do touch ~/anna/testtask/testfile$i; done
+echo 'create files testfile[1:10]in directory testtask' >> ~/anna/testlog
+echo '--- start download config file' >> ~/anna/testlog | touch ~/anna/wgetlog
+wget -b admitrieva.com/dhclient.conf -O ~/anna/testtask/dhclient.conf -a ~/anna/anna/testlog
+echo '--- end download config from internet' >> ~/anna/testlog
+for i in `ls -1 ~/anna/testtask/ | grep -v dhclient`; do cat ~/anna/testtask/dhclient.conf > ~/anna/testtask/$i; done 
+echo 'copy config file to testfile[1:10]in directory testtask' >> ~/anna/testlog
+echo 'list files:' >> ~/anna/testlog
+ls -1h ~/anna/testtask/*  >> ~/anna/testlog | ls ~/anna/testlog >> ~/anna/testlog
