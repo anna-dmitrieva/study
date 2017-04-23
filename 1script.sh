@@ -18,6 +18,7 @@ echo '--- move files in different dir' >> ~/anna/testlog
 cd ~/anna/; for f in `ls -1 ~/anna/testtask/ | grep -v testfile10` ; do mkdir dir_$f; 
 mv -v ~/anna/testtask/$f dir_$f/ >> ~/anna/testlog ; done
 mv -v ~/anna/testtask/testfile10 ~/anna >> ~/anna/testlog
+rm ~/anna/testtask/testfile10
 echo '--- find all files with name testfile*' >> ~/anna/testlog
 find ~/anna -type f -name testfile* >> ~/anna/testlog
 echo '--- show size and name files' >> ~/anna/testlog
