@@ -14,3 +14,4 @@ for i in `ls -1 ~/anna/testtask/ | grep -v dhclient`; do cat ~/anna/testtask/dhc
 echo 'copy config file to testfile[1:10]in directory testtask' >> ~/anna/testlog
 echo 'list files:' >> ~/anna/testlog
 ls -1h ~/anna/testtask/*  >> ~/anna/testlog | ls ~/anna/testlog >> ~/anna/testlog
+for i in 'ls -1 ~/anna/testtask/ | egrep -v 'dhclient|testfile10' ; do 
