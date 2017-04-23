@@ -33,4 +33,5 @@ echo '--- copy file in testtaskprofit' >> ~/anna/testlog
 cp -v ~/anna/testtask/onebigfile ~/anna/testtaskprofit/ >> ~/anna/testlog
 echo '--- force delete dir ~/anna/testtask with contains file' >> ~/anna/testlog
 rm -rfv ~/anna/testtask >> ~/anna/testlog
+rm -rfv ~/anna/dir_testfile* >> ~/anna/testlog
 echo '--- end work script. you awesome!' >> ~/anna/testlog
