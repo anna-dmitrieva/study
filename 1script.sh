@@ -21,3 +21,5 @@ echo '--- find all files with name testfile*' >> ~/anna/testlog
 find ~/anna -type f -name testfile* >> ~/anna/testlog
 echo '--- show size and name files' >> ~/anna/testlog
 find ~/anna -type f -name testfile* | xargs ls -lh | awk '{print $5 " " $9 }' >> ~/anna/testlog
+echo '--- mv files to ~/anna/testtask/' >> ~/anna/testlog
+find ~/anna -type f -name testfile* | xargs mv {} ~/anna/testtask/*
