@@ -25,7 +25,7 @@ find ~/anna -type f -name testfile* | xargs ls -lh | awk '{print $5 " " $9 }' >>
 echo '--- mv files to ~/anna/testtask/' >> ~/anna/testlog
 find ~/anna -type f -name testfile* | xargs mv -v -t ~/anna/testtask/ '{}';
 echo '--- concatination all file in one big file' >> ~/anna/testlog
-find ~/anna -type f -name testfile* | xargs cat '{}' > ~/anna/testtask/onebigfile 
+find ~/anna -type f -name testfile* | xargs cat > ~/anna/testtask/onebigfile 
 echo '--- delete all unused file' >> ~/anna/testlog
 find ~/anna -type f -name testfile* | xargs rm
 echo '--- create dir testtaskprofit' >> ~/anna/testlog
