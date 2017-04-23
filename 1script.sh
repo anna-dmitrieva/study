@@ -17,13 +17,13 @@ ls -1h ~/anna/testtask/*  >> ~/anna/testlog | ls ~/anna/testlog >> ~/anna/testlo
 echo '--- move files in different dir' >> ~/anna/testlog
 cd ~/anna/; for f in `ls -1 ~/anna/testtask/ | grep -v testfile10` ; do mkdir dir_$f; 
 mv -v ~/anna/testtask/$f dir_$f/ >> ~/anna/testlog ; done
-mv ~/anna/testtask/testfile10 ~/anna
+mv -v ~/anna/testtask/testfile10 ~/anna >> ~/anna/testlog
 echo '--- find all files with name testfile*' >> ~/anna/testlog
 find ~/anna -type f -name testfile* >> ~/anna/testlog
 echo '--- show size and name files' >> ~/anna/testlog
 find ~/anna -type f -name testfile* | xargs ls -lh | awk '{print $5 " " $9 }' >> ~/anna/testlog
 echo '--- mv files to ~/anna/testtask/' >> ~/anna/testlog
-find ~/anna -type f -name testfile* | xargs mv -v -t ~/anna/testtask/ ;
+find ~/anna -type f -name testfile* | xargs mv -v -t ~/anna/testtask/ >> ~/anna/testlog ;
 echo '--- concatination all file in one big file' >> ~/anna/testlog
 find ~/anna -type f -name testfile* | xargs cat > ~/anna/testtask/onebigfile 
 echo '--- delete all unused file' >> ~/anna/testlog
