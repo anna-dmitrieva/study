@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 # 
-mkdir ~/anna
-touch ~/anna/testlog | echo '--- create log file' >> ~/anna/testlog
+mkdir -v ~/anna 
+touch ~/anna/testlog | echo '--- create log file and dir /root/anna' >> ~/anna/testlog
 chmod 444 ~/anna/testlog | echo '--- modificate logfile for read any user' >> ~/anna/testlog
 mkdir ~/anna/testtask/ | echo '--- create dir testtask' >> ~/anna/testlog
 for i in 1 2 3 4 5 6 7 8 9 10 ; do touch ~/anna/testtask/testfile$i; done
@@ -16,10 +16,22 @@ echo '--- list files:' >> ~/anna/testlog
 ls -1h ~/anna/testtask/*  >> ~/anna/testlog | ls ~/anna/testlog >> ~/anna/testlog
 cd ~/anna/; for f in `ls -1 ~/anna/testtask/ | grep -v testfile10` ; do mkdir dir_$f; 
 mv ~/anna/testtask/$f dir_$f/ ; done | echo 'move files in different dir' >> ~/anna/testlog
-mv ~/anna/testtask/testfile10 ~/anna/ | echo 'move one file in root_anna dir' >> ~/anna/testlog
+mv ~/anna/testtask/testfile10 ~/anna/ | echo 'move one file in /root/anna dir' >> ~/anna/testlog
 echo '--- find all files with name testfile*' >> ~/anna/testlog
 find ~/anna -type f -name testfile* >> ~/anna/testlog
 echo '--- show size and name files' >> ~/anna/testlog
 find ~/anna -type f -name testfile* | xargs ls -lh | awk '{print $5 " " $9 }' >> ~/anna/testlog
 echo '--- mv files to ~/anna/testtask/' >> ~/anna/testlog
-find ~/anna -type f -name testfile* | xargs mv {} ~/anna/testtask/*
+find ~/anna -type f -name testfile* | xargs mv {} ~/anna/testtask/
+echo '--- concatination all file in one big file' >> ~/anna/testlog
+cat * ~/anna/testtask/testfile* > ~/anna/testtask/onebigfile 
+echo '--- delete all unused file' >> ~/anna/testlog
+find ~/anna -type f -name testfile* | xargs rm
+echo '--- create dir testtaskprofit' >> ~/anna/testlog
+mkdir -v ~/anna/testtaskprofit >> ~/anna/testlog
+echo '--- copy file in testtaskprofit' >> ~/anna/testlog
+cp -v ~/anna/testtask/onebigfile ~/anna/testtaskprofit/ >> ~/anna/testlog
+echo '--- force delete dir ~/anna/testtask with contains file' >> ~/anna/testlog
+rm -rfv ~/anna/testtask >> ~/anna/testlog
+echo '--- end work script. you awesome!' >> ~/anna/testlog
+
