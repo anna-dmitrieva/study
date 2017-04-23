@@ -19,15 +19,16 @@ cd ~/anna/; for f in `ls -1 ~/anna/testtask/ | grep -v testfile10` ; do mkdir di
 mv -v ~/anna/testtask/$f dir_$f/ >> ~/anna/testlog ; done
 mv -v ~/anna/testtask/testfile10 ~/anna >> ~/anna/testlog
 echo '--- find all files with name testfile*' >> ~/anna/testlog
-find ~/anna -type f -maxdepth 4 -name testfile* >> ~/anna/testlog
+find ~/anna -type f -name testfile* >> ~/anna/testlog
 echo '--- show size and name files' >> ~/anna/testlog
-find ~/anna -type f -maxdepth 4 -name testfile* | xargs ls -lh | awk '{print $5 " " $9 }' >> ~/anna/testlog
+find ~/anna -type f -name testfile* | xargs ls -lh | awk '{print $5 " " $9 }' >> ~/anna/testlog
+sleep 1
 echo '--- mv files to ~/anna/testtask/' >> ~/anna/testlog
-find ~/anna -type f -maxdepth 4 -name testfile* | xargs mv -v -t ~/anna/testtask/ >> ~/anna/testlog ;
+find ~/anna -type f -name testfile* | xargs mv -v -t ~/anna/testtask/ >> ~/anna/testlog ;
 echo '--- concatination all file in one big file' >> ~/anna/testlog
-find ~/anna -type f -maxdepth 4 -name testfile* | xargs cat > ~/anna/testtask/onebigfile 
+find ~/anna -type f -name testfile* | xargs cat > ~/anna/testtask/onebigfile 
 echo '--- delete all unused file' >> ~/anna/testlog
-find ~/anna -type f -maxdepth 4 -name testfile* | xargs rm
+find ~/anna -type f -name testfile* | xargs rm
 echo '--- create dir testtaskprofit' >> ~/anna/testlog
 mkdir -v ~/anna/testtaskprofit >> ~/anna/testlog
 echo '--- copy file in testtaskprofit' >> ~/anna/testlog
