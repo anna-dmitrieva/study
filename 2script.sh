@@ -2,4 +2,4 @@
 #
 touch ~/anna/script.log
 echo $(date -u)": Started" >> ~/anna/script.log
-if [ "$#" -eq "4" ]; then echo "$@"; else echo 'You nead to provide 4 parameters'; fi
+if [ "$#" -eq "4" ]; then echo -n "$@"; else echo 'You nead to provide 4 parameters'; fi
