@@ -1,6 +1,5 @@
 #!/bin/bash
 #
-mkdir ~/anna
 touch ~/anna/testlog | echo '--- create log file and dir /root/anna' >> ~/anna/testlog
 chmod 444 ~/anna/testlog | echo '--- modificate logfile for read any user' >> ~/anna/testlog
 mkdir ~/anna/testtask/ | echo '--- create dir testtask' >> ~/anna/testlog
